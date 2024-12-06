@@ -21,7 +21,6 @@ const App = () => {
   });
 
   useEffect(() => {
-    // Fetch the data from the public folder (locally hosted JSON)
     fetch("/data.json")
       .then((response) => response.json())
       .then((jsonData) => {
@@ -31,7 +30,6 @@ const App = () => {
 
   useEffect(() => {
     if (data) {
-      // Calculate metrics
       const revenue = calculateRevenue(data);
       const expenses = calculateExpenses(data);
       const grossProfitMargin = calculateGrossProfitMargin(data, revenue);
@@ -60,6 +58,7 @@ const App = () => {
               <Card.Title className="text-center mb-4 fw-bold">
                 Reward Pay Accounting Metrics
               </Card.Title>
+              <hr />
               <div>
                 <p>
                   <strong>Revenue:</strong> {formatCurrency(metrics.revenue)}
